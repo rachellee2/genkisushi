@@ -44,7 +44,7 @@
   --tableHighlightBg: rgba(230, 235, 237, 0.25);
 
   /* text block + Gallery txt */
-  --txtBlock: rgb(136, 132, 120);
+  --txtBlock: #707070;
 
   /* button */
   --buttonBg: #ffffff;
@@ -259,16 +259,19 @@ h6 {
 
 @media screen and (max-width: 1680px) {
   h1 {
-    font-size: 3.5em; } }
+    font-size: 3.5em;
+    letter-spacing: 3px; } }
 
 @media screen and (max-width: 980px) {
   h1 {
-    font-size: 3.25em; } }
+    font-size: 3.25em;
+    letter-spacing: 2px; } }
 
 @media screen and (max-width: 736px) {
   h1 {
     font-size: 2em;
-    line-height: 1.4; }
+    line-height: 1.4;
+    letter-spacing: 1px; }
   h2 {
     font-size: 1.5em; } }
 
@@ -363,7 +366,7 @@ hr {
   top: 20%; right: 10px;
   font-size: 40px;
   font-weight: bolder;
-  color: rgb(255, 255, 255);
+  color: var(--txtBlock);
   cursor: pointer;
   z-index: 100;
   user-select: none;
@@ -374,7 +377,7 @@ hr {
   left: 10%;
   font-size: 40px;
   font-weight: bolder;
-  color: rgb(255, 255, 255);
+  color: var(--txtBlock);
   cursor: pointer;
   z-index: 100;
   user-select: none;
@@ -389,7 +392,7 @@ hr {
   top: 50%; right: 10%;
   font-size: 40px;
   font-weight: bolder;
-  color: rgb(255, 255, 255);
+  color: var(--txtBlock);
   cursor: pointer;
   z-index: 100;
   user-select: none;

@@ -14,7 +14,7 @@ galleryImages.forEach(function callback (image, index) {
       isFirst = true;
       isLast = false;
       document.querySelector('.popup-img #left').style.pointerEvents = "none";
-      document.querySelector('.popup-img #left').style.color = "#3d4449";
+      document.querySelector('.popup-img #left').style.opacity = "0";
     }
     else if(index === 24){
       currentIndex = index;
@@ -22,7 +22,7 @@ galleryImages.forEach(function callback (image, index) {
       isFirst = false;
       isLast = true;
       document.querySelector('.popup-img #right').style.pointerEvents = "none";
-      document.querySelector('.popup-img #right').style.color = "#3d4449";
+      document.querySelector('.popup-img #right').style.opacity = "0";
     }
     else if(index === 25){
       return;
@@ -34,9 +34,9 @@ galleryImages.forEach(function callback (image, index) {
       isLast = false;
       
       document.querySelector('.popup-img #left').style.pointerEvents = "all";
-      document.querySelector('.popup-img #left').style.color = "#ffffff";
+      document.querySelector('.popup-img #left').style.opacity = "100";
       document.querySelector('.popup-img #right').style.pointerEvents = "all";
-      document.querySelector('.popup-img #right').style.color = "#ffffff";
+      document.querySelector('.popup-img #right').style.opacity = "100";
     }
 
     document.querySelector('.popup-img').style.display = 'block';
@@ -58,7 +58,7 @@ galleryImages.forEach(function callback (image, index) {
 
     document.querySelector('.popup-img #left').onclick = () =>{
       document.querySelector('.popup-img #right').style.pointerEvents = "all";
-      document.querySelector('.popup-img #right').style.color = "#ffffff";
+      document.querySelector('.popup-img #right').style.opacity = "100";
       isLast = false;
 
       if(!isFirst){
@@ -69,7 +69,7 @@ galleryImages.forEach(function callback (image, index) {
         if(currentIndex === 0){
           isFirst = true;
           document.querySelector('.popup-img #left').style.pointerEvents = "none";
-          document.querySelector('.popup-img #left').style.color = "#3d4449";
+          document.querySelector('.popup-img #left').style.opacity = "0";
         }
         // alert(isFirst);
       }
@@ -77,7 +77,7 @@ galleryImages.forEach(function callback (image, index) {
 
     document.querySelector('.popup-img #right').onclick = () =>{
       document.querySelector('.popup-img #left').style.pointerEvents = "all";
-      document.querySelector('.popup-img #left').style.color = "#ffffff";
+      document.querySelector('.popup-img #left').style.opacity = "100";
       isFirst = false;
 
       if(!isLast){
@@ -88,7 +88,7 @@ galleryImages.forEach(function callback (image, index) {
         if(currentIndex === 24){
           isLast = true;
           document.querySelector('.popup-img #right').style.pointerEvents = "none";
-          document.querySelector('.popup-img #right').style.color = "#3d4449";
+          document.querySelector('.popup-img #right').style.opacity = "0";
         }
         // alert(isFirst);
       }
