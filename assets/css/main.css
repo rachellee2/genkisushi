@@ -15,7 +15,8 @@
   --red: #bf3021 ;
   /*  #2b2b2b vs #0c0c0c */
   --bgColour: #2b2b2b;
-  --mainBodyTxt: #c5c5c5;
+  /* #c5c5c5 */
+  --mainBodyTxt: #b4b4b4;
   /* side bar bg #1d1d1d vs #000000 */ 
   --sidebarBg: #1d1d1d;
   /* side bar inner alt (search bg) #181818 vs #050505 */
@@ -178,9 +179,9 @@ body {
 /* Type */
 body, input, select, textarea {
   color: var(--mainBodyTxt);
-  font-family: "Open Sans", sans-serif;
-  font-size: 13pt;
-  font-weight: 400;
+  font-family: "Roboto Slab", serif;
+  font-size: 12pt;
+  font-weight: 200;
   line-height: 1.65; }
   @media screen and (max-width: 1680px) {
     body, input, select, textarea {
@@ -226,8 +227,8 @@ p.menu {
 
 h1, h2, h3, h4, h5, h6 {
   color: var(--strongTxt);
-  font-family: "Vampiro one", normal;
-  font-weight: 400;
+  font-family: "Lucida Grande", Candara;
+  font-weight: 600;
   line-height: 1.5;
   margin: 0 0 1em 0; }
   h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -238,7 +239,8 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 4em;
   margin: 0 0 0.5em 0;
-  line-height: 1.3; }
+  line-height: 1.3; 
+  letter-spacing: 4px; }
 
 h2 {
   font-size: 1.75em; }
@@ -2340,7 +2342,7 @@ button,
   #header .logo {
     border-bottom: 0;
     color: inherit;
-    font-family: "Vampiro one", normal;
+    font-family: "Lucida Grande", Candara;
     font-size: 1.125em; }
   #header .icons {
     text-align: right; }
