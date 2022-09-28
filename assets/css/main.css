@@ -227,7 +227,7 @@ p.menu {
 
 h1, h2, h3, h4, h5, h6 {
   color: var(--strongTxt);
-  font-family: "Lucida Grande", Candara;
+  font-family: "Lucida Grande", sans-serif;
   font-weight: 600;
   line-height: 1.5;
   margin: 0 0 1em 0; }
@@ -2345,7 +2345,7 @@ button,
   #header .logo {
     border-bottom: 0;
     color: inherit;
-    font-family: "Lucida Grande", Candara;
+    font-family: "Lucida Grande", sans-serif;
     font-size: 1.125em; }
   #header .icons {
     text-align: right; }
