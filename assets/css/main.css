@@ -35,8 +35,8 @@
   /* Blockquote sidebar + Code border + hr underline*/
   --blockQuote: rgba(102, 67, 62, 0.75);
   --boxBorder: rgba(210, 215, 217, 0.75);
-  /* platter menu 2 */
-  --uiAlt: rgba(210, 215, 217, 0.75);
+  /* platter menu 2  rgba(210, 215, 217, 0.75) rgba(70, 70, 70, 0.75)*/
+  --uiAlt: rgba(102, 67, 62, 0.75);
   --uiContact: rgba(102, 67, 62, 0.75);
   --codeBg: rgba(230, 235, 237, 0.25);
 
@@ -221,6 +221,10 @@ dt.menu {
   text-align: center;
 }
 
+h4.menu {
+  font-weight: 800;
+}
+
 p.menu {
   padding-top: 2em;
   text-align: center;
@@ -338,13 +342,11 @@ hr {
   position: absolute;
   width: 100%;
   font-weight: 800;
-  font-size: small;
   font-style: italic;
   color: var(--txtBlock);
 }
 .text-block dt{
   font-weight: 800;
-  font-size: small;
   font-style: italic;
   color: var(--txtBlock);
   text-align: center;
