@@ -16,7 +16,7 @@
   /*  #2b2b2b vs #0c0c0c */
   --bgColour: #2b2b2b;
   /* #c5c5c5 */
-  --mainBodyTxt: #b4b4b4;
+  --mainBodyTxt: #c5c5c5;
   /* side bar bg #1d1d1d vs #000000 */ 
   --sidebarBg: #1d1d1d;
   /* side bar inner alt (search bg) #181818 vs #050505 */
@@ -180,18 +180,21 @@ body {
 body, input, select, textarea {
   color: var(--mainBodyTxt);
   font-family: "Roboto Slab", serif;
-  font-size: 11pt;
+  font-size: 10pt;
   font-weight: 200;
   line-height: 1.65; }
   @media screen and (max-width: 1680px) {
     body, input, select, textarea {
-      font-size: 10pt; } }
-  @media screen and (max-width: 1280px) {
-    body, input, select, textarea {
       font-size: 9pt; } }
-  @media screen and (max-width: 360px) {
+  /* @media screen and (max-width: 1280px) {
+    body, input, select, textarea {
+      font-size: 9pt; } } */
+  @media screen and (max-width: 780px) {
     body, input, select, textarea {
       font-size: 8pt; } }
+  @media screen and (max-width: 360px) {
+    body, input, select, textarea {
+      font-size: 7pt; } }
 
 a {
   -moz-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
@@ -223,6 +226,10 @@ dt.menu {
 
 h4.menu {
   font-weight: 800;
+}
+
+#price {
+  color: #948282;
 }
 
 p.menu {
@@ -282,7 +289,10 @@ h6 {
     line-height: 1.4;
     letter-spacing: 1px; }
   h2 {
-    font-size: 1.5em; } }
+    font-size: 1.4em; } 
+  h3 {
+    font-size: 1.2em;
+  }}
 
 sub {
   font-size: 0.8em;
