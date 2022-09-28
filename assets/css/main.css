@@ -180,18 +180,18 @@ body {
 body, input, select, textarea {
   color: var(--mainBodyTxt);
   font-family: "Roboto Slab", serif;
-  font-size: 12pt;
+  font-size: 11pt;
   font-weight: 200;
   line-height: 1.65; }
   @media screen and (max-width: 1680px) {
     body, input, select, textarea {
-      font-size: 11pt; } }
+      font-size: 10pt; } }
   @media screen and (max-width: 1280px) {
     body, input, select, textarea {
-      font-size: 10pt; } }
+      font-size: 9pt; } }
   @media screen and (max-width: 360px) {
     body, input, select, textarea {
-      font-size: 9pt; } }
+      font-size: 8pt; } }
 
 a {
   -moz-transition: color 0.2s ease-in-out, border-bottom-color 0.2s ease-in-out;
@@ -217,8 +217,13 @@ em, i {
 p {
   margin: 0 0 2em 0; }
 
+dt.menu {
+  text-align: center;
+}
+
 p.menu {
   padding-top: 2em;
+  text-align: center;
   /* text-align: center; */
 }
 /* .vCenter {
@@ -2351,17 +2356,17 @@ button,
     text-align: right; }
   @media screen and (max-width: 1680px) {
     #header {
-      padding-top: 5em; } }
+      padding-top: 4em; } }
   @media screen and (max-width: 736px) {
     #header {
-      padding-top: 6.5em; }
+      padding-top: 4.5em; }
       #header .logo {
         font-size: 1.25em;
         margin: 0; }
       #header .icons {
         height: 5em;
         line-height: 5em;
-        position: absolute;
+        position:absolute;
         right: -0.5em;
         top: 0; } }
 
