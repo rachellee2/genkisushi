@@ -1487,9 +1487,14 @@ input[type="radio"] + label:before {
     .image.main img {
       width: 100%; }
 
+      @media screen and (max-width: 980px) {
+        .image.fit.menuImg{
+          max-width: 200px;
+        }
+      }
       @media screen and (max-width: 480px) {
         .image.fit.menuImg{
-          max-width: 170px;
+          max-width: 120px;
         }
       }
 
