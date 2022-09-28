@@ -380,7 +380,7 @@ hr {
 }
 .box .row .popup-img #exit{
   position: absolute;
-  top: 20%; right: 10px;
+  top: 20%; right: 10%;
   font-size: 40px;
   font-weight: bolder;
   color: var(--txtBlock);
@@ -390,34 +390,24 @@ hr {
 }
 .box .row .popup-img #left{
   position: absolute;
-  top: 50%; 
-  left: 10%;
+  top: 46%; 
+  left: 20%;
   font-size: 40px;
   font-weight: bolder;
   color: var(--txtBlock);
   cursor: pointer;
   z-index: 100;
   user-select: none;
-}
-@media screen and (max-width: 980px){
-  .box .row .popup-img #left{
-    left: 5%;
-  }
 }
 .box .row .popup-img #right{
   position: absolute;
-  top: 50%; right: 10%;
+  top: 46%; right: 20%;
   font-size: 40px;
   font-weight: bolder;
   color: var(--txtBlock);
   cursor: pointer;
   z-index: 100;
   user-select: none;
-}
-@media screen and (max-width: 980px){
-  .box .row .popup-img #right{
-    right: 5%;
-  }
 }
 .box .row .image.fit{
   user-select: none;
@@ -436,14 +426,33 @@ hr {
   object-fit: cover;
   user-select: none;
 }
-/* .box .row .popup-img img:hover{
-  cursor: pointer;
-} */
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 1280px){
+  .box .row .popup-img #left{
+    left: 10%;
+  }
+  .box .row .popup-img #right{
+    right: 10%;
+  }
+}
+@media screen and (max-width: 980px){
+  .box .row .popup-img #exit{
+    right: 5%;
+  }
+  .box .row .popup-img #left{
+    left: 5%;
+  }
+  .box .row .popup-img #right{
+    right: 5%;
+  }
   .box .row .popup-img img{
     max-width: 80%;
   }
 }
+
+/* .box .row .popup-img img:hover{
+  cursor: pointer;
+} */
+
 
   .row > * {
     box-sizing: border-box; }
