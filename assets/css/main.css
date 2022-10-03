@@ -362,6 +362,17 @@ hr {
   text-align: center;
 }
 
+.hours{
+  display: block;
+  text-align: center;
+  padding: 5px 0px 0px;
+  text-align: center; 
+  /* #290000 vs #000e29 */
+  background-color: #001029;
+  /* position:fixed; */
+  top: 0; left: 0; right: 0;
+}
+
 /* Row */
 .row {
   display: flex;
@@ -2513,7 +2524,8 @@ button,
       transition: color 0.2s ease-in-out;
       text-decoration: none;
       -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-      position: relative; }
+      position: relative; 
+      align-items: center;}
       #menu ul a.opener:before, #menu ul span.opener:before {
         -moz-osx-font-smoothing: grayscale;
         -webkit-font-smoothing: antialiased;
