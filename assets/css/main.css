@@ -206,7 +206,7 @@ a {
   text-decoration: none; }
   a:hover {
     border-bottom-color: var(--red);
-    color: var(--red) !important; }
+    color: var(--red) ; }
     a:hover strong {
       color: inherit; }
 
@@ -2497,6 +2497,14 @@ button,
   font-size: 0.7em;}
   #footer .copyright a {
     color: inherit; }
+  #footer .copyright a:hover{
+    color: var(--footerFont);
+    text-transform: none;
+    text-decoration: none;
+    text-decoration-color: var(--footerFont);
+    transition: none;
+    border-bottom: none; 
+  }
 
 /* Menu */
 #menu ul {
