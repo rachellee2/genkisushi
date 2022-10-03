@@ -373,6 +373,10 @@ hr {
   top: 0; left: 0; right: 0;
 }
 
+.whatDay{
+  text-transform:none;
+}
+
 /* Row */
 .row {
   display: flex;
