@@ -4,8 +4,6 @@
   const saturday = (gettingDays == 6 && gettingHours >= 9 && gettingHours < 15);
   const openClosed = (weekday || saturday) ? 'OPEN' : 'CLOSED';
 
-
-
   document.querySelector('.closeOrOpened').innerHTML = openClosed;
   
   if(openClosed === 'OPEN'){
