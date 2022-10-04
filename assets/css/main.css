@@ -1552,6 +1552,26 @@ ul {
   ul.alt {
     list-style: none;
     padding-left: 0; }
+    ul.alt.catering {
+      /* #303030 vs #252525 */
+      background-color: #272727;
+      /* #292929 vs #242424 */
+      /* border: 2px solid #262626; */
+      box-shadow: 1px 1px 5px 1px #1f1f1f;
+      border-radius: 10px;
+      padding-left: 3em; padding-right: 3em;
+    }
+      ul.alt.catering p {
+        padding-top: 1em;
+      }
+    ul.alt.menu {
+      background-color: #272727;
+      /* border: 2px solid #262626; */
+      box-shadow: 1px 1px 5px 1px #1f1f1f;
+      border-radius: 8px;
+      padding-left: 1em; padding-right: 1em;
+      padding-top: 1em;
+    }
     ul.alt.menu li{
       padding-top: 1em;
       padding-bottom: 1em;
@@ -1569,10 +1589,10 @@ i.icon {
   color: var(--red);
 }
 
-/* #f1bd2d vs #379600 vs #ecd54f */
+/* #f1bd2d vs #379600 vs #ecd54f vs #a0d44b vs #f3b04c */
 
 i.menu {
-  color: #f1bd2d;
+  color: #f3b04c;
 }
 
 dl {
