@@ -1568,8 +1568,11 @@ ul {
 i.icon {
   color: var(--red);
 }
+
+/* #f1bd2d vs #379600 vs #ecd54f */
+
 i.menu {
-  color: #379600;
+  color: #f1bd2d;
 }
 
 dl {
