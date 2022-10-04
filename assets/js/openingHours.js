@@ -2,11 +2,11 @@
   const gettingDays = new Date().getDay()
   const weekday = ((gettingDays != 6 && gettingDays != 0) && gettingHours >= 8 && gettingHours < 17);
   const saturday = (gettingDays == 6 && gettingHours >= 9 && gettingHours < 15);
-  const openClosed = (weekday || saturday) ? 'OPEN' : 'CLOSED';
+  const openClosed = (weekday || saturday) ? 'we are currently OPEN' : 'we are currently CLOSED';
 
   document.querySelector('.closeOrOpened').innerHTML = openClosed;
   
-  if(openClosed === 'OPEN'){
+  if(openClosed === 'we are currently OPEN'){
     document.querySelector('.hours').style.backgroundColor = '#4c6439';
   }
   else{
