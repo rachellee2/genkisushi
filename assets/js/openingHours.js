@@ -7,10 +7,10 @@
   document.querySelector('.closeOrOpened').innerHTML = openClosed;
   
   if(openClosed === 'OPEN'){
-    document.querySelector('.hours').style.backgroundColor = '#000e29';
+    document.querySelector('.hours').style.backgroundColor = '#4c6439';
   }
   else{
-    document.querySelector('.hours').style.backgroundColor = '#290000';
+    document.querySelector('.hours').style.backgroundColor = '#643a39';
   }
 
 
