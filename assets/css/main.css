@@ -1600,6 +1600,10 @@ i.menu {
   color: #f3b04c;
 }
 
+i.vegetarian {
+  color: #7ec275;
+}
+
 dl {
   margin: 0 0 2em 0; }
   dl dt {
