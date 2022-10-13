@@ -6,6 +6,11 @@
 
 (function($) {
 
+	const imgs = document.getElementsByTagName('img');
+	for(let i = 0; i < imgs.length; i++ ) {
+			imgs[i].setAttribute("ondragstart", "return false")
+	}
+
 	var	$window = $(window),
 		$head = $('head'),
 		$body = $('body');
