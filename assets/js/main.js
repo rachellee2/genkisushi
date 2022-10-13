@@ -14,10 +14,10 @@
 					return false;
 				}
 			})
-			imgs[i].on("taphold", function(event){
-				event.preventDefault();
-				event.stopPropagation();
-			})
+			// imgs[i].on("taphold", function(event){
+			// 	event.preventDefault();
+			// 	event.stopPropagation();
+			// })
 	}
 
 	var	$window = $(window),
