@@ -9,10 +9,14 @@
 	const imgs = document.getElementsByTagName('img');
 	for(let i = 0; i < imgs.length; i++ ) {
 			imgs[i].setAttribute("ondragstart", "return false")
-			imgs[i].onmousedown(function(e){
-				if(e.button==2){
-					return false;
-				}
+			// imgs[i].onmousedown(function(e){
+			// 	if(e.button==2){
+			// 		return false;
+			// 	}
+			// })
+			imgs[i].on("taphold", function(event){
+				event.preventDefault();
+				event.stopImmediatePropagation();
 			})
 	}
 
