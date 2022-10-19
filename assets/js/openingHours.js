@@ -77,7 +77,7 @@ holiday.forEach(function(value, key){     // key "LABOUR day"     value "24/10/2
     // if a date of current week matches to a holiday
     if (value == key2Date) {
       let newMessage = value2.split("&nbsp&nbsp");
-      thisWeek.set(key2, key + " &nbsp<i class=\"fa-solid fa-caret-right\"></i>&nbsp " + newMessage[0] + "&nbsp&nbspClosed");  } });
+      thisWeek.set(key2, key + " &nbsp|&nbsp " + newMessage[0] + "&nbsp&nbspClosed");  } });
   // if today is holiday
   if(value === currentDate){
     // edit prompt holiday message
