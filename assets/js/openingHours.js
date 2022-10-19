@@ -29,88 +29,97 @@ const holiday = new Map([
   // ----------------------------------------------------------------------------------------------------
 ]);
 
-const d = new Date();
-const currentDate = addZero(d.getDate()) + "/" + addZero((d.getMonth()+1)) + "/" + d.getFullYear();
-const gettingHours = d.getHours();
-const gettingDays = d.getDay();
+let isWeekday, isSaturday = false;
+let openClosed, barColour = '';
 
 // init map for this week
 let thisWeek = new Map();
 
 // Add current week's dates, and matching click message into the map object
-for (let index = 0; index < 7; index++) {
-  let cMessage = "";
-  const date = new Date();
-  date.setDate(d.getDate() + index);
-  
-  switch (date.getDay()) {
-    case 0:
-      cMessage = "Sun &nbsp&nbspClosed"; break;
-    case 1:
-      cMessage = "Mon &nbsp&nbsp 8am - 5pm"; break;
-    case 2:
-      cMessage = "Tue &nbsp&nbsp 8am - 5pm"; break;
-    case 3:
-      cMessage = "Wed &nbsp&nbsp 8am - 5pm"; break;
-    case 4:
-      cMessage = "Thu &nbsp&nbsp 8am - 5pm"; break;
-    case 5:
-      cMessage = "Fri &nbsp&nbsp 8am - 5pm"; break;
-    case 6:
-      cMessage = "Sat &nbsp&nbsp 9am - 3pm"; break;  }
-
-  thisWeek.set(date, cMessage);  }
-
-// day is neither saturday nor sunday AND time is at or later than 8 AND earlier than 5.
-let isWeekday = ((gettingDays != 6 && gettingDays != 0) && gettingHours >= 8 && gettingHours < 17);
-// day is saturday AND time is at or later than 9 AND earlier than 3.
-let isSaturday = (gettingDays == 6 && gettingHours >= 9 && gettingHours < 15);
-// non holiday message
-let openClosed = (isWeekday || isSaturday)? '- we are currently OPEN -' : '- we are currently CLOSED -';
-// non holiday colour
-let barColour = (isWeekday || isSaturday)? '#4c6439' : '#643a39';
-
-// foreach to check if there is a holiday in this week
-holiday.forEach(function(value, key){     // key "LABOUR day"     value "24/10/2022"
-  thisWeek.forEach(function(value2, key2){// key "Tue Oct 18..."  value "click Message!"
-    // convert date object into matching syntax for comparison
-    let key2Date = addZero(key2.getDate()) + "/" + addZero((key2.getMonth()+1)) + "/" + key2.getFullYear();
-    // if a date of current week matches to a holiday
-    if (value == key2Date) {
-      let newMessage = value2.split("&nbsp&nbsp");
-      thisWeek.set(key2, key + " &nbsp|&nbsp " + newMessage[0] + "&nbsp&nbspClosed");  } });
-  // if today is holiday
-  if(value === currentDate){
-    // edit prompt holiday message
-    openClosed = key + "<br />" + "we are currently CLOSED";
-    barColour = '#643a39';
-
-    // ----------------------------------------------------------------------EDIT holiday MESSAGE!!----
-    // Wishing everyone a safe and happy ...
-    // Happy ... !
-    // It's ... Thanks you for your hard work!
-    // Wishing you a truly wonderful ... filled with peace and love
-    // Happy HOLIDAYS!
-    // Best wishes for the Holidays, and for health and happiness throughout the coming year
-    // WISHING YOU A MERRY CHRISTMAS and a HAPPY NEW YEAR
-
-    // clickMessage = "Wishing everyone a safe and happy " + key + "!";
-    // ------------------------------------------------------------------------------------------------
-    } });
-
-function setClickMessages(i, j, k){
+function setClickMessages(){
   $("#show").load("#show");
-  document.getElementById("closeOrOpened").innerHTML = j;
-  document.querySelector('.hours').style.backgroundColor = k;
+
+  let d = new Date();
+  let currentDate = addZero(d.getDate()) + "/" + addZero((d.getMonth()+1)) + "/" + d.getFullYear();
+  let gettingHours = d.getHours();
+  let gettingDays = d.getDay();
+
+  thisWeek.clear();
+  for (let index = 0; index < 7; index++) {
+    let cMessage = "";
+    let date = new Date();
+    date.setDate(d.getDate() + index);
+    
+    switch (date.getDay()) {
+      case 0:
+        cMessage = "Sun &nbsp&nbsp Closed"; break;
+      case 1:
+        cMessage = "Mon &nbsp&nbsp 8am - 5pm"; break;
+      case 2:
+        cMessage = "Tue &nbsp&nbsp 8am - 5pm"; break;
+      case 3:
+        cMessage = "Wed &nbsp&nbsp 8am - 5pm"; break;
+      case 4:
+        cMessage = "Thu &nbsp&nbsp 8am - 5pm"; break;
+      case 5:
+        cMessage = "Fri &nbsp&nbsp 8am - 5pm"; break;
+      case 6:
+        cMessage = "Sat &nbsp&nbsp 9am - 3pm"; break;  }
+
+    
+    thisWeek.set(date, cMessage);  }
+
+  // day is neither saturday nor sunday AND time is at or later than 8 AND earlier than 5.
+  isWeekday = ((gettingDays != 6 && gettingDays != 0) && gettingHours >= 8 && gettingHours < 17);
+  // day is saturday AND time is at or later than 9 AND earlier than 3.
+  isSaturday = (gettingDays == 6 && gettingHours >= 9 && gettingHours < 15);
+  // non holiday message
+  openClosed = (isWeekday || isSaturday)? '- we are currently OPEN -' : '- we are currently CLOSED -';
+  // non holiday colour
+  barColour = (isWeekday || isSaturday)? '#4c6439' : '#643a39';
+
+  // foreach to check if there is a holiday in this week
+  holiday.forEach(function(value, key){     // key "LABOUR day"     value "24/10/2022"
+    thisWeek.forEach(function(value2, key2){// key "Tue Oct 18..."  value "click Message!"
+      // convert date object into matching syntax for comparison
+      let key2Date = addZero(key2.getDate()) + "/" + addZero((key2.getMonth()+1)) + "/" + key2.getFullYear();
+      // if a date of current week matches to a holiday
+      if (value == key2Date) {
+        let newMessage = value2.split("&nbsp&nbsp");
+        if(!newMessage[0].includes(key)){
+         thisWeek.set(key2, key + " &nbsp|&nbsp " + newMessage[0] + "&nbsp&nbspClosed");  
+        }
+      } 
+    });
+    // if today is holiday
+    if(value === currentDate){
+      // edit prompt holiday message
+      openClosed = key + "<br />" + "we are currently CLOSED";
+      barColour = '#643a39';
+
+      // ----------------------------------------------------------------------EDIT holiday MESSAGE!!----
+      // Wishing everyone a safe and happy ...
+      // Happy ... !
+      // It's ... Thanks you for your hard work!
+      // Wishing you a truly wonderful ... filled with peace and love
+      // Happy HOLIDAYS!
+      // Best wishes for the Holidays, and for health and happiness throughout the coming year
+      // WISHING YOU A MERRY CHRISTMAS and a HAPPY NEW YEAR
+
+      // clickMessage = "Wishing everyone a safe and happy " + key + "!";
+      // ------------------------------------------------------------------------------------------------
+      } });
 
   let counter = 0;
-  i.forEach(function(value, key){
+  thisWeek.forEach(function(value, key){
     // alert(value);
     document.getElementById("whatDay" + counter).innerHTML = value;
-    // + " " + Math.random();
+    //  + " " + Math.random();
     counter += 1; });
+  document.getElementById("closeOrOpened").innerHTML = openClosed;
+  document.querySelector('.hours').style.backgroundColor = barColour;
 }
 setClickMessages(thisWeek, openClosed, barColour);
 // $(function () {
-  setInterval(()=>setClickMessages(thisWeek, openClosed, barColour), 10000);
+  setInterval(()=>setClickMessages(), 10000);
 // });
