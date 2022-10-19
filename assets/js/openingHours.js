@@ -1,3 +1,4 @@
+
 function addZero(i){
   if(i < 10){i = "0" + i;}
   return i; }
@@ -97,12 +98,19 @@ holiday.forEach(function(value, key){     // key "LABOUR day"     value "24/10/2
     // ------------------------------------------------------------------------------------------------
     } });
 
-document.querySelector('.closeOrOpened').innerHTML = openClosed;
-document.querySelector('.hours').style.backgroundColor = barColour;
+function setClickMessages(i, j, k){
+  $("#show").load("#show");
+  document.getElementById("closeOrOpened").innerHTML = j;
+  document.querySelector('.hours').style.backgroundColor = k;
 
-let counter = 0;
-thisWeek.forEach(function(value, key){
-  // alert(value);
-  document.querySelector('.whatDay' + counter).innerHTML = value;
-  counter += 1; });
-
+  let counter = 0;
+  i.forEach(function(value, key){
+    // alert(value);
+    document.getElementById("whatDay" + counter).innerHTML = value;
+    // + " " + Math.random();
+    counter += 1; });
+}
+setClickMessages(thisWeek, openClosed, barColour);
+// $(function () {
+  setInterval(()=>setClickMessages(thisWeek, openClosed, barColour), 10000);
+// });
