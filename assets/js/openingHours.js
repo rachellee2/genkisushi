@@ -5,10 +5,10 @@ function addZero(i){
 
 const holiday = new Map([
   // Test [key, value]
-  ["LABOUR DAY", "23/10/2022"],
+  // ["LABOUR DAY", "23/10/2022"],
   // -------------------------------------------------------------------------------------ADD HOLIDAY----
   // ["LABOUR holiday",      "22/10/2022"],
-  ["LABOUR day",          "24/10/2022"],
+  ["LABOUR DAY",          "24/10/2022"],
   ["CHRISTMAS",           "25/12/2022"],
   ["BOXING Day",          "26/12/2022"],
   ["CHRISTMAS Holiday",   "27/12/2022"],
