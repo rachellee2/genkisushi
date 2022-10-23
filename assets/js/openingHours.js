@@ -5,7 +5,7 @@ function addZero(i){
 
 const holiday = new Map([
   // Test [key, value]
-  // ["AUCKLAND Anniversary", "19/10/2022"],
+  ["LABOUR DAY", "23/10/2022"],
   // -------------------------------------------------------------------------------------ADD HOLIDAY----
   // ["LABOUR holiday",      "22/10/2022"],
   ["LABOUR day",          "24/10/2022"],
@@ -52,7 +52,7 @@ function setClickMessages(){
     
     switch (date.getDay()) {
       case 0:
-        cMessage = "Sun &nbsp&nbsp Closed"; break;
+        cMessage = "Sun &nbsp&nbsp closed"; break;
       case 1:
         cMessage = "Mon &nbsp&nbsp 8am - 5pm"; break;
       case 2:
@@ -87,14 +87,14 @@ function setClickMessages(){
       if (value == key2Date) {
         let newMessage = value2.split("&nbsp&nbsp");
         if(!newMessage[0].includes(key)){
-         thisWeek.set(key2, key + " &nbsp|&nbsp " + newMessage[0] + "&nbsp&nbspClosed");  
+         thisWeek.set(key2, key + " &nbsp|&nbsp " + newMessage[0] + "&nbsp&nbsp closed");  
         }
       } 
     });
     // if today is holiday
     if(value === currentDate){
       // edit prompt holiday message
-      openClosed = key + "<br />" + "we are currently CLOSED";
+      openClosed = "HAPPY " + key + "!<br />" + "- we are currently CLOSED -";
       barColour = '#643a39';
 
       // ----------------------------------------------------------------------EDIT holiday MESSAGE!!----

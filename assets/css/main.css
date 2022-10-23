@@ -2705,13 +2705,13 @@ button,
       #menu ul a.opener.active + ul, #menu ul span.opener.active + ul {
         display: block; }
       #menu ul a.opener.active:before, #menu ul span.opener.active:before {
-        margin-right: 5%;
+        margin-right: 9%;
         -moz-transform: rotate(-180deg);
         -webkit-transform: rotate(-180deg);
         -ms-transform: rotate(-180deg);
         transform: rotate(-180deg); }
       #menu ul span.opener:before {
-        margin-right: 5%; }
+        margin-right: 9%; }
 
 #menu > ul > li {
   border-top: solid 1px var(--sidebarBorder);
@@ -2720,8 +2720,8 @@ button,
   #menu > ul > li > ul {
     color: #9fa3a6;
     display: none;
-    margin: 0.5em 0 1.5em 0;
-    padding-left: 1em; }
+    /* padding-left: 1em;  */
+    margin: 0.5em 0 1.5em 0;}
     #menu > ul > li > ul a, #menu > ul > li > ul span {
       font-size: 0.8em; }
     #menu > ul > li > ul > li {
