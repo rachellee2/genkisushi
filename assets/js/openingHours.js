@@ -46,7 +46,8 @@ const holiday = new Map([
 
 let isWeekday, isSaturday = false;
 let openClosed, barColour = '';
-let tempClosing = true;
+// ____________TRUE WHENEVER TEMP CLOSING THE SHOP_________________________________________________________
+let tempClosing = false;
 
 // init map for this week
 let thisWeek = new Map();
