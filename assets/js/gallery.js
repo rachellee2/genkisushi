@@ -20,7 +20,8 @@ galleryImages.forEach(function callback (image, index) {
       document.querySelector('.popup-img #left').style.pointerEvents = "none";
       document.querySelector('.popup-img #left').style.opacity = "0";
     }
-    else if(index === 24){
+    // index === 24
+    else if(index === galleryImages.length-2){
       currentIndex = index;
 
       isFirst = false;
@@ -28,7 +29,8 @@ galleryImages.forEach(function callback (image, index) {
       document.querySelector('.popup-img #right').style.pointerEvents = "none";
       document.querySelector('.popup-img #right').style.opacity = "0";
     }
-    else if(index === 25){
+    // index === 25
+    else if(index === galleryImages.length-1){
       return;
     }
     else{
@@ -91,7 +93,7 @@ galleryImages.forEach(function callback (image, index) {
         document.querySelector('.popup-img').style.display = 'block';
         document.querySelector('.popup-img img').src = currentImage.getAttribute('src').replace(' - thumb.png', ' - Edited.png');
         currentIndex += 1;
-        if(currentIndex === 24){
+        if(currentIndex === galleryImages.length-2){
           isLast = true;
           document.querySelector('.popup-img #right').style.pointerEvents = "none";
           document.querySelector('.popup-img #right').style.opacity = "0";
