@@ -5,7 +5,7 @@ function addZero(i){
 
 const holiday = new Map([
   // Test [key, value]
-  ["Staff-shortage", "29/10/2022"],
+  // ["Staff-shortage", "29/10/2022"],
   // -------------------------------------------------------------------------------------ADD HOLIDAY----
   // ["LABOUR holiday",      "22/10/2022"],
   ["LABOUR DAY",          "24/10/2022"],
@@ -162,7 +162,7 @@ function setClickMessages(){
     counter += 1; });
   
   if(tempClosing == true && !openClosed.includes('Unfortunately')){
-    openClosed = 'Unfortunately, we will be closed this Saturday<br />due to staff shortage.<br /><br />' + openClosed;
+    openClosed = 'Unfortunately, we will be closed this [...]<br />due to staff shortage.<br /><br />' + openClosed;
   }
   document.getElementById("closeOrOpened").innerHTML = openClosed;
   document.querySelector('.hours').style.backgroundColor = barColour;

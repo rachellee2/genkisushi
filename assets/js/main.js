@@ -272,5 +272,30 @@
 				});
 
 			});
+			
+	// Menu.
+		var $sidemenu = $('#sidemenu'),
+		$sidemenu_openers = $sidemenu.children('ul').find('.opener');
+
+	// Openers.
+		$sidemenu_openers.each(function() {
+
+			var $this = $(this);
+
+			$this.on('click', function(event) {
+
+				// Prevent default.
+					event.preventDefault();
+
+				// Toggle.
+					$sidemenu_openers.not($this).removeClass('active');
+					$this.toggleClass('active');
+
+				// Trigger resize (sidebar lock).
+					$window.triggerHandler('resize.sidebar-lock');
+
+			});
+
+		});
 
 })(jQuery);
