@@ -19,6 +19,8 @@ galleryImages.forEach(function callback (image, index) {
       isLast = false;
       document.querySelector('.popup-img #left').style.pointerEvents = "none";
       document.querySelector('.popup-img #left').style.opacity = "0";
+      document.querySelector('.popup-img #right').style.pointerEvents = "all";
+      document.querySelector('.popup-img #right').style.opacity = "100";
     }
     // index === 24
     else if(index === galleryImages.length-2){
@@ -28,6 +30,8 @@ galleryImages.forEach(function callback (image, index) {
       isLast = true;
       document.querySelector('.popup-img #right').style.pointerEvents = "none";
       document.querySelector('.popup-img #right').style.opacity = "0";
+      document.querySelector('.popup-img #left').style.pointerEvents = "all";
+      document.querySelector('.popup-img #left').style.opacity = "100";
     }
     // index === 25
     else if(index === galleryImages.length-1){
