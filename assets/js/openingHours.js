@@ -8,24 +8,30 @@ const holiday = new Map([
   // ["Staff-shortage", "29/10/2022"],
   // -------------------------------------------------------------------------------------ADD HOLIDAY----
   // ["LABOUR holiday",      "22/10/2022"],
-  ["LABOUR DAY",          "24/10/2022"],
-  ["CHRISTMAS",           "25/12/2022"],
-  ["BOXING DAY",          "26/12/2022"],
-  ["CHRISTMAS HOLIDAY",   "27/12/2022"],
+  ["CHRISTMAS EVE 24/12",       "24/12/2022"],
+  ["CHRISTMAS 25/12",           "25/12/2022"],
+  ["BOXING DAY 26/12",          "26/12/2022"],
+  ["CHRISTMAS HOLIDAY 27/12",   "27/12/2022"],
+  ["CHRISTMAS HOLIDAY 28/12",   "28/12/2022"],
+  ["CHRISTMAS HOLIDAY 29/12",   "29/12/2022"],
+  ["CHRISTMAS HOLIDAY 30/12",   "30/12/2022"],
+  ["CHRISTMAS HOLIDAY 31/12",   "31/12/2022"],
+
   // 2023
-  ["NEW YEAR'S DAY",      "01/01/2023"],
-  ["Day after NEW YEAR'S","02/01/2023"],
-  ["NEW YEAR'S HOLIDAY",  "03/01/2023"],
-  // ["AUCKLAND ANNIVERSARY","30/01/2023"],
-  // ["WAITANGI DAY",        "06/02/2023"],
-  // ["GOOD FRIDAY",         "07/04/2023"],
-  // ["EASTER MONDAY",       "10/04/2023"],
-  // ["ANZAC DAY",           "25/04/2023"],
-  // ["KING'S BIRTHDAY",     "05/06/2023"],
-  // ["MATARIKI",            "14/07/2023"],
-  // ["LABOUR DAY",          "23/10/2023"],
-  // ["CHRISTMAS",           "25/12/2023"],
-  // ["BOXING DAY",          "26/12/2023"],
+  ["NEW YEAR'S DAY 01/01",      "01/01/2023"],
+  ["NEW YEAR'S HOLIDAY 02/01",  "02/01/2023"],
+  ["NEW YEAR'S HOLIDAY 03/01",  "03/01/2023"],
+  // ["AUCKLAND ANNIVERSARY 30/01","30/01/2023"],
+  // ["WAITANGI DAY 06/02",        "06/02/2023"],
+  // ["GOOD FRIDAY 07/04",         "07/04/2023"],
+  // ["EASTER MONDAY 10/04",       "10/04/2023"],
+  // ["ANZAC DAY 25/04",           "25/04/2023"],
+  // ["KING'S BIRTHDAY 05/06",     "05/06/2023"],
+  // ["MATARIKI 14/07",            "14/07/2023"],
+  // ["LABOUR DAY 23/10",          "23/10/2023"],
+  // ["CHRISTMAS EVE 24/12",           "24/12/2023"],
+  // ["CHRISTMAS 25/12",           "25/12/2023"],
+  // ["BOXING DAY 26/12",          "26/12/2023"],
   // ----------------------------------------------------------------------------------------------------
 ]);
 
@@ -108,7 +114,7 @@ function setClickMessages(){
             thisWeek.set(key2, newMessage[0] + "&nbsp&nbsp closed");  
           }
           else{
-            thisWeek.set(key2, key + " &nbsp|&nbsp " + newMessage[0] + "&nbsp&nbsp closed");  
+            thisWeek.set(key2, key.slice(0, key.length-6) + " &nbsp|&nbsp " + newMessage[0] + "&nbsp&nbsp closed");  
           }
         }
       } 
@@ -119,26 +125,27 @@ function setClickMessages(){
 
       // edit prompt holiday message
       switch (key) {
-        case "CHRISTMAS":
-          openClosed = "<i class=\"fa-solid fa-holly-berry\"></i> MERRY CHRISTMAS <i class=\"fa-solid fa-holly-berry\"></i><br /> Wishing everyone a truly wonderful Christmas filled with peace and love!<br /><br />" 
+        case "CHRISTMAS 25/12":
+          openClosed = "<i class=\"fa-solid fa-socks\"></i> MERRY CHRISTMAS <i class=\"fa-solid fa-gift\"></i><br /> Wishing everyone a truly wonderful Christmas filled with peace and love!<br /><br />" 
           + "- we are currently CLOSED -"; break;
 
-        case "NEW YEAR'S DAY":
+          case "CHRISTMAS EVE 24/12":
+            openClosed = "<i class=\"fa-solid fa-snowman\"></i> MERRY CHRISTMAS EVE <i class=\"fa-solid fa-candy-cane\"></i><br /><br />" 
+            + "- we are currently CLOSED -"; break;
+  
+        case "NEW YEAR'S DAY 01/01":
           openClosed = "<i class=\"fa-solid fa-champagne-glasses\"></i> HAPPY NEW YEARS " + value.slice(6,10) 
           + " <i class=\"fa-solid fa-champagne-glasses\"></i><br />Best wishes for the holidays, and for health and happiness throughout the coming year!<br /><br />" 
           + "- we are currently CLOSED -"; break;
 
-        case "Day after NEW YEAR'S":
-          openClosed = "HAPPY NEW YEAR'S HOLIDAY!<br /><br />" + "- we are currently CLOSED -"; break;
-
-        case "GOOD FRIDAY":
+        case "GOOD FRIDAY 07/04":
           openClosed = "IT'S GOOD FRIDAY!<br /><br />" + "- we are currently CLOSED -"; break;
+
         case "Staff-shortage":
           openClosed = "Unfortunately, we are closed today due to staff shortage.<br />We will reopen on monday 31st October.<br /><br />" + "- we are currently CLOSED -"; break;
-        // case "":
-        //   openClosed = ; break;
+
         default:
-          openClosed = "HAPPY " + key + "!<br /><br />" + "- we are currently CLOSED -"; break;
+          openClosed = "HAPPY " + key.slice(0, key.length-6) + "!<br /><br />" + "- we are currently CLOSED -"; break;
       }
 
       // ----------------------------------------------------------------------EDIT holiday MESSAGE!!----
@@ -164,7 +171,7 @@ function setClickMessages(){
   if(tempClosing == true && !openClosed.includes('Unfortunately')){
     openClosed = 'Unfortunately, we will be closed this [...]<br />due to staff shortage.<br /><br />' + openClosed;
   }
-  document.getElementById("closeOrOpened").innerHTML = openClosed;
+  document.getElementById("closeOrOpened").innerHTML = "Our Christmas & New year's holiday starts from 24th December until 3rd January.<br/>and we will reopen on Wednesday 4th January.<br/><br/>" + openClosed;
   document.querySelector('.hours').style.backgroundColor = barColour;
 }
 setClickMessages(thisWeek, openClosed, barColour);
