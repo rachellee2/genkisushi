@@ -321,22 +321,46 @@ h5 {
 
 h6 {
   font-size: 0.7em; }
-
+@media screen and (max-width: 3000px) {
+  h1 {
+    font-size: 3.5em;
+    letter-spacing: 3px; }
+  .websiteLogo img {
+    width: 400px;  }
+  .websiteLogoS img {
+    width: 220px;  }
+  .sideLogo img{
+    width: 140px;  }
+}
 @media screen and (max-width: 1680px) {
   h1 {
     font-size: 3.5em;
-    letter-spacing: 3px; } }
+    letter-spacing: 3px; }
+  .websiteLogo img {
+    width: 310px;  }
+  .websiteLogoS img {
+    width: 200px;  }
+  .sideLogo img{
+    width: 120px;  } }
 
 @media screen and (max-width: 980px) {
   h1 {
     font-size: 3.25em;
-    letter-spacing: 2px; } }
+    letter-spacing: 2px; } 
+  .websiteLogo img {
+    width: 300px;  }
+  .websiteLogoS img {
+    width: 180px;  } }
 
 @media screen and (max-width: 736px) {
   h1 {
     font-size: 2em;
     line-height: 1.4;
     letter-spacing: 1px; }
+  .websiteLogo img {
+    width: 185px;  }
+  .websiteLogoS img {
+    width: 140px;  } 
   h2 {
     font-size: 1.4em; } 
   h3 {
