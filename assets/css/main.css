@@ -365,7 +365,12 @@ h6 {
     font-size: 1.4em; } 
   h3 {
     font-size: 1.2em;  }}
-
+@media screen and (max-width: 480px) {
+  .websiteLogo img {
+    width: 170px;  }
+  .websiteLogoS img {
+    width: 140px;  }
+}
 sub {
   font-size: 0.8em;
   position: relative;
