@@ -15,7 +15,7 @@ const holiday = new Map([
   ["CHRISTMAS HOLIDAY 28/12",   "28/12/2022"],
   ["CHRISTMAS HOLIDAY 29/12",   "29/12/2022"],
   ["CHRISTMAS HOLIDAY 30/12",   "30/12/2022"],
-  ["CHRISTMAS HOLIDAY 31/12",   "31/12/2022"],
+  ["NEW YEAR'S EVE 31/12",      "31/12/2022"],
 
   // 2023
   ["NEW YEAR'S DAY 01/01",      "01/01/2023"],
