@@ -358,7 +358,7 @@ h6 {
     line-height: 1.4;
     letter-spacing: 1px; }
   .websiteLogo img {
-    width: 185px;  }
+    width: 280px;  }
   .websiteLogoS img {
     width: 140px;  } 
   h2 {
@@ -367,7 +367,7 @@ h6 {
     font-size: 1.2em;  }}
 @media screen and (max-width: 480px) {
   .websiteLogo img {
-    width: 170px;  }
+    width: 260px;  }
   .websiteLogoS img {
     width: 140px;  }
 }
