@@ -171,7 +171,7 @@ function setClickMessages(){
   if(tempClosing == true && !openClosed.includes('Unfortunately')){
     openClosed = 'Unfortunately, we will be closed this [...]<br />due to staff shortage.<br /><br />' + openClosed;
   }
-  document.getElementById("closeOrOpened").innerHTML = "Our Christmas & New year's holiday starts from 24th December until 3rd January.<br/>and we will reopen on Wednesday 4th January.<br/><br/>" + openClosed;
+  document.getElementById("closeOrOpened").innerHTML = "Our Christmas & New year's holiday starts from 24th December until 3rd January.<br/>We will reopen on Wednesday 4th January.<br/><br/>" + openClosed;
   document.querySelector('.hours').style.backgroundColor = barColour;
 }
 setClickMessages(thisWeek, openClosed, barColour);
