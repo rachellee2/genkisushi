@@ -104,7 +104,7 @@ function setClickMessages(){
     thisWeek.set(date, cMessage);  }
 
   // day is neither saturday nor sunday AND time is at or later than 8 AND earlier than 5.
-  isWeekday = ((gettingDays != 6 && gettingDays != 0) && gettingHours >= 8 && gettingHours < 17);
+  isWeekday = ((gettingDays != 6 && gettingDays != 0) && gettingHours >= 9 && gettingHours < 16);
   // day is saturday AND time is at or later than 9 AND earlier than 3.
   isSaturday = (gettingDays == 6 && gettingHours >= 9 && gettingHours < 15);
   // non holiday message
@@ -182,7 +182,7 @@ function setClickMessages(){
   if(tempClosing == true && !openClosed.includes('Unfortunately')){
     openClosed = 'Unfortunately, we will be closed this [...]<br />due to staff shortage.<br /><br />' + openClosed;
   }
-  document.getElementById("closeOrOpened").innerHTML = "Hope everyone had a great holiday!<br/><br/>From this Wednesday to Friday,<br/> opening hour will be<br/>8am - 4pm,<br/>and then it will go back to <br/>8am - 5pm from next week <i class=\"fa-regular fa-face-smile\"></i><br/><br/>" + openClosed;
+  document.getElementById("closeOrOpened").innerHTML = "Hope everyone had a great holiday!<br/><br/>From this Wednesday to Friday,<br/> opening hour will be<br/>9am - 4pm,<br/>and then it will go back to <br/>8am - 5pm from next week <i class=\"fa-regular fa-face-smile\"></i><br/><br/>" + openClosed;
   document.querySelector('.hours').style.backgroundColor = barColour;
 }
 setClickMessages(thisWeek, openClosed, barColour);
