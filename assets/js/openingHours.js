@@ -74,11 +74,29 @@ function setClickMessages(){
       case 2:
         cMessage = "Tue &nbsp&nbsp 8am - 5pm"; break;
       case 3:
-        cMessage = "Wed &nbsp&nbsp 8am - 5pm"; break;
+        if((date.getDate() + "" + (date.getMonth()+1))=="41"){
+          cMessage = "Wed &nbsp&nbsp 8am - 4pm";
+        }
+        else{
+          cMessage = "Wed &nbsp&nbsp 8am - 5pm";
+        } 
+        break;
       case 4:
-        cMessage = "Thu &nbsp&nbsp 8am - 5pm"; break;
+        if((date.getDate() + "" + (date.getMonth()+1))=="51"){
+          cMessage = "Wed &nbsp&nbsp 8am - 4pm";
+        }
+        else{
+          cMessage = "Wed &nbsp&nbsp 8am - 5pm";
+        }  
+        break;
       case 5:
-        cMessage = "Fri &nbsp&nbsp 8am - 5pm"; break;
+        if((date.getDate() + "" + (date.getMonth()+1))=="61"){
+          cMessage = "Wed &nbsp&nbsp 8am - 4pm";
+        }
+        else{
+          cMessage = "Wed &nbsp&nbsp 8am - 5pm";
+        }  
+        break;
       case 6:
         cMessage = "Sat &nbsp&nbsp 9am - 3pm"; break;  }
 
@@ -164,7 +182,7 @@ function setClickMessages(){
   if(tempClosing == true && !openClosed.includes('Unfortunately')){
     openClosed = 'Unfortunately, we will be closed this [...]<br />due to staff shortage.<br /><br />' + openClosed;
   }
-  document.getElementById("closeOrOpened").innerHTML = "We will reopen on Wed 4th January<br/><br/>" + openClosed;
+  document.getElementById("closeOrOpened").innerHTML = "From this Wednesday to Friday,<br/> opening hour will be<br/>8am - 4pm,<br/>and then it will go back to <br/>8am - 5pm from next week<br/><br/>" + openClosed;
   document.querySelector('.hours').style.backgroundColor = barColour;
 }
 setClickMessages(thisWeek, openClosed, barColour);
