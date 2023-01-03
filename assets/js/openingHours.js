@@ -75,7 +75,7 @@ function setClickMessages(){
         cMessage = "Tue &nbsp&nbsp 8am - 5pm"; break;
       case 3:
         if((date.getDate() + "" + (date.getMonth()+1))=="41"){
-          cMessage = "Wed &nbsp&nbsp 8am - 4pm";
+          cMessage = "Wed &nbsp&nbsp 9am - 4pm";
         }
         else{
           cMessage = "Wed &nbsp&nbsp 8am - 5pm";
@@ -83,7 +83,7 @@ function setClickMessages(){
         break;
       case 4:
         if((date.getDate() + "" + (date.getMonth()+1))=="51"){
-          cMessage = "Wed &nbsp&nbsp 8am - 4pm";
+          cMessage = "Wed &nbsp&nbsp 9am - 4pm";
         }
         else{
           cMessage = "Wed &nbsp&nbsp 8am - 5pm";
@@ -91,7 +91,7 @@ function setClickMessages(){
         break;
       case 5:
         if((date.getDate() + "" + (date.getMonth()+1))=="61"){
-          cMessage = "Wed &nbsp&nbsp 8am - 4pm";
+          cMessage = "Wed &nbsp&nbsp 9am - 4pm";
         }
         else{
           cMessage = "Wed &nbsp&nbsp 8am - 5pm";
