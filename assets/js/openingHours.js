@@ -108,7 +108,7 @@ function setClickMessages(){
             thisWeek.set(key2, newMessage[0] + "&nbsp&nbsp closed");  
           }
           else{
-            thisWeek.set(key2, key.slice(0, key.length-6) + " &nbsp|&nbsp " + newMessage[0] + "&nbsp&nbsp closed");  
+            thisWeek.set(key2, newMessage[0] + "&nbsp&nbsp closed" + " &nbsp|&nbsp " + key.slice(0, key.length-6));  
           }
         }
       } 
