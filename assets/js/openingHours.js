@@ -7,13 +7,8 @@ const holiday = new Map([
   // Test [key, value]
   // ["Staff-shortage", "29/10/2022"],
   // -------------------------------------------------------------------------------------ADD HOLIDAY----
-  ["CHRISTMAS HOLIDAY 30/12",   "30/12/2022"],
-  ["NEW YEAR'S EVE 31/12",      "31/12/2022"],
 
   // 2023
-  ["NEW YEAR'S DAY 01/01",      "01/01/2023"],
-  ["NEW YEAR'S HOLIDAY 02/01",  "02/01/2023"],
-  ["NEW YEAR'S HOLIDAY 03/01",  "03/01/2023"],
   ["AUCKLAND ANNIVERSARY 30/01","30/01/2023"],
   ["WAITANGI DAY 06/02",        "06/02/2023"],
   ["GOOD FRIDAY 07/04",         "07/04/2023"],
@@ -74,21 +69,9 @@ function setClickMessages(){
       case 2:
         cMessage = "Tue &nbsp&nbsp 8am - 5pm"; break;
       case 3:
-        if((date.getDate() + "" + (date.getMonth()+1))=="41"){
-          cMessage = "Wed &nbsp&nbsp 9am - 4pm";
-        }
-        else{
-          cMessage = "Wed &nbsp&nbsp 8am - 5pm";
-        } 
-        break;
+        cMessage = "Wed &nbsp&nbsp 8am - 5pm"; break;
       case 4:
-        if((date.getDate() + "" + (date.getMonth()+1))=="51"){
-          cMessage = "Thu &nbsp&nbsp 9am - 4pm";
-        }
-        else{
-          cMessage = "Thu &nbsp&nbsp 8am - 5pm";
-        }  
-        break;
+        cMessage = "Thu &nbsp&nbsp 8am - 5pm"; break;
       case 5:
         if((date.getDate() + "" + (date.getMonth()+1))=="61"){
           cMessage = "Fri &nbsp&nbsp 9am - 4pm";
@@ -104,7 +87,7 @@ function setClickMessages(){
     thisWeek.set(date, cMessage);  }
 
   // day is neither saturday nor sunday AND time is at or later than 8 AND earlier than 5.
-  isWeekday = ((gettingDays != 6 && gettingDays != 0) && gettingHours >= 9 && gettingHours < 16);
+  isWeekday = ((gettingDays != 6 && gettingDays != 0) && gettingHours >= 8 && gettingHours < 17);
   // day is saturday AND time is at or later than 9 AND earlier than 3.
   isSaturday = (gettingDays == 6 && gettingHours >= 9 && gettingHours < 15);
   // non holiday message
@@ -182,7 +165,7 @@ function setClickMessages(){
   if(tempClosing == true && !openClosed.includes('Unfortunately')){
     openClosed = 'Unfortunately, we will be closed this [...]<br />due to staff shortage.<br /><br />' + openClosed;
   }
-  document.getElementById("closeOrOpened").innerHTML = "Hope everyone had a great holiday!<br/><br/>From this Wednesday to Friday,<br/> opening hour will be<br/>9am - 4pm,<br/>and then it will go back to <br/>8am - 5pm from next week <i class=\"fa-regular fa-face-smile\"></i><br/><br/>" + openClosed;
+  document.getElementById("closeOrOpened").innerHTML = openClosed;
   document.querySelector('.hours').style.backgroundColor = barColour;
 }
 setClickMessages(thisWeek, openClosed, barColour);
