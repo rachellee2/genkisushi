@@ -82,10 +82,11 @@ function setClickMessages(){
         break;
       case 6:
         if((date.getDate() + "" + (date.getMonth()+1))=="281"){
-          cMessage = "Fri &nbsp&nbsp 9am - 4pm";
+          cMessage = "Sat &nbsp&nbsp 9am - 2pm";
         }
-      case 7:
-        cMessage = "Sat &nbsp&nbsp 9am - 3pm"; break;  }
+        else{
+          cMessage = "Sat &nbsp&nbsp 9am - 3pm";
+        }  }
 
     
     thisWeek.set(date, cMessage);  }
@@ -93,13 +94,14 @@ function setClickMessages(){
   // day is neither saturday nor sunday AND time is at or later than 8 AND earlier than 5.
   isWeekday = ((gettingDays != 6 && gettingDays != 0) && gettingHours >= 8 && gettingHours < 17);
 
-  if((date.getDate() + "" + (date.getMonth()+1))=="281"){
+  if((d.getDate() + "" + (d.getMonth()+1))=="281"){
     isSaturday = (gettingDays == 6 && gettingHours >= 9 && gettingHours < 14);
   }
   else{
+    alert((d.getDate() + "" + (d.getMonth()+1)));
     isSaturday = (gettingDays == 6 && gettingHours >= 9 && gettingHours < 15);
   }
-  
+
   // day is saturday AND time is at or later than 9 AND earlier than 3.
   // isSaturday = (gettingDays == 6 && gettingHours >= 9 && gettingHours < 15);
   // non holiday message
