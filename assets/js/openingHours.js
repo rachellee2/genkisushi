@@ -98,7 +98,6 @@ function setClickMessages(){
     isSaturday = (gettingDays == 6 && gettingHours >= 9 && gettingHours < 14);
   }
   else{
-    alert((d.getDate() + "" + (d.getMonth()+1)));
     isSaturday = (gettingDays == 6 && gettingHours >= 9 && gettingHours < 15);
   }
 
