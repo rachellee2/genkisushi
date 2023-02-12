@@ -102,7 +102,8 @@ function setClickMessages(){
   isSaturday = (gettingDays == 6 && gettingHours >= 9 && gettingHours < 15);
 
   if((d.getDate() + "" + (d.getMonth()+1))=="132"){
-    isWeekday, isSaturday = false;
+    isWeekday = false;
+    isSaturday = false;
   }
 
   // day is saturday AND time is at or later than 9 AND earlier than 3.
