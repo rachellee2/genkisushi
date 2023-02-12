@@ -65,7 +65,13 @@ function setClickMessages(){
       case 0:
         cMessage = "Sun &nbsp&nbsp closed"; break;
       case 1:
-        cMessage = "Mon &nbsp&nbsp 8am - 5pm"; break;
+        if((date.getDate() + "" + (date.getMonth()+1))=="132"){
+          cMessage = "Mon &nbsp&nbsp closed";
+        }
+        else{
+          cMessage = "Mon &nbsp&nbsp 8am - 5pm";
+        }  
+        break;
       case 2:
         cMessage = "Tue &nbsp&nbsp 8am - 5pm"; break;
       case 3:
@@ -93,12 +99,10 @@ function setClickMessages(){
 
   // day is neither saturday nor sunday AND time is at or later than 8 AND earlier than 5.
   isWeekday = ((gettingDays != 6 && gettingDays != 0) && gettingHours >= 8 && gettingHours < 17);
+  isSaturday = (gettingDays == 6 && gettingHours >= 9 && gettingHours < 15);
 
-  if((d.getDate() + "" + (d.getMonth()+1))=="281"){
-    isSaturday = (gettingDays == 6 && gettingHours >= 9 && gettingHours < 14);
-  }
-  else{
-    isSaturday = (gettingDays == 6 && gettingHours >= 9 && gettingHours < 15);
+  if((d.getDate() + "" + (d.getMonth()+1))=="132"){
+    isWeekday, isSaturday = false;
   }
 
   // day is saturday AND time is at or later than 9 AND earlier than 3.
@@ -178,7 +182,7 @@ function setClickMessages(){
   if(tempClosing == true && !openClosed.includes('Unfortunately')){
     openClosed = 'Unfortunately, we will be closed this [...]<br />due to staff shortage.<br /><br />' + openClosed;
   }
-  document.getElementById("closeOrOpened").innerHTML = openClosed;
+  document.getElementById("closeOrOpened").innerHTML = "Sorry,<br>we are CLOSED<br>due to<br>weather inclement<br><br>Stay safe and healthy<br><br>" + openClosed;
   document.querySelector('.hours').style.backgroundColor = barColour;
 }
 setClickMessages(thisWeek, openClosed, barColour);
