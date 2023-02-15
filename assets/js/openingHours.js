@@ -183,7 +183,7 @@ function setClickMessages(){
   if(tempClosing == true && !openClosed.includes('Unfortunately')){
     openClosed = 'Unfortunately, we will be closed this [...]<br />due to staff shortage.<br /><br />' + openClosed;
   }
-  document.getElementById("closeOrOpened").innerHTML = "Sorry,<br>we are CLOSED<br>due to<br>weather inclement<br><br>Stay safe and healthy<br><br>" + openClosed;
+  document.getElementById("closeOrOpened").innerHTML = openClosed;
   document.querySelector('.hours').style.backgroundColor = barColour;
 }
 setClickMessages(thisWeek, openClosed, barColour);
