@@ -63,7 +63,13 @@ function setClickMessages(){
     
     switch (date.getDay()) {
       case 0:
-        cMessage = "Sun &nbsp&nbsp closed"; break;
+        if((date.getDate() + "" + (date.getMonth()+1))=="53"){
+          cMessage = "Sun &nbsp&nbsp [ Round the Bays 2023 ] &nbsp&nbsp 10am - 2pm"; 
+        }
+        else{
+          cMessage = "Sun &nbsp&nbsp closed"; 
+        }
+        break;
       case 1:
         if((date.getDate() + "" + (date.getMonth()+1))=="132"){
           cMessage = "Mon &nbsp&nbsp closed";
@@ -101,9 +107,17 @@ function setClickMessages(){
   isWeekday = ((gettingDays != 6 && gettingDays != 0) && gettingHours >= 8 && gettingHours < 17);
   isSaturday = (gettingDays == 6 && gettingHours >= 9 && gettingHours < 15);
 
-  if((d.getDate() + "" + (d.getMonth()+1))=="132"){
-    isWeekday = false;
-    isSaturday = false;
+  if(((d.getDate() + "" + (d.getMonth()+1))=="53") && gettingHours >= 10 && gettingHours < 14){
+    // if(gettingHours >= 10 && gettingHours < 14){
+    //   isWeekday = true;
+    //   isSaturday = true;
+    // }
+    // else{
+    //   isWeekday = false;
+    //   isSaturday = false;
+    // }
+    isWeekday = true;
+    isSaturday = true;
   }
 
   // day is saturday AND time is at or later than 9 AND earlier than 3.
@@ -183,7 +197,7 @@ function setClickMessages(){
   if(tempClosing == true && !openClosed.includes('Unfortunately')){
     openClosed = 'Unfortunately, we will be closed this [...]<br />due to staff shortage.<br /><br />' + openClosed;
   }
-  document.getElementById("closeOrOpened").innerHTML = openClosed;
+  document.getElementById("closeOrOpened").innerHTML = "Round the Bays 2023<br/><br/>We will be open<br/>this Sunday (5/3/2023)<br/>for NZ's largest fun run, Round The Bays!<br/>#RTB23 #RoundtheBays<br/><br/>*10% off on sushi<br/>on Sunday<br/>for the participants & staffs<br/>of Round the Bays<br/><br/>- Opening hour -<br/>Sunday &nbsp&nbsp 10am - 2pm<br/><br/>" + openClosed;
   document.querySelector('.hours').style.backgroundColor = barColour;
 }
 setClickMessages(thisWeek, openClosed, barColour);
