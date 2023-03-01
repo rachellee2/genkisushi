@@ -197,7 +197,7 @@ function setClickMessages(){
   if(tempClosing == true && !openClosed.includes('Unfortunately')){
     openClosed = 'Unfortunately, we will be closed this [...]<br />due to staff shortage.<br /><br />' + openClosed;
   }
-  document.getElementById("closeOrOpened").innerHTML = "Round the Bays 2023<br/><br/>We will be open<br/>this Sunday (5/3/2023)<br/>for NZ's largest fun run, Round The Bays!<br/>#RTB23 #RoundtheBays<br/><br/>*10% off on sushi<br/>on Sunday<br/>for the participants & staffs<br/>of Round the Bays<br/><br/>- Opening hour -<br/>Sunday &nbsp&nbsp 10am - 2pm<br/><br/>" + openClosed;
+  document.getElementById("closeOrOpened").innerHTML = "Round the Bays 2023<br/><br/>We will be open<br/>this Sunday (5/3/2023)<br/>for NZ's largest fun run, Round The Bays!<br/>#RTB23 #RoundtheBays<br/><br/>* 10% off on sushi<br/>for the participants & staffs<br/>of Round the Bays<br/>on Sunday!<br/><br/>- Opening hour -<br/>Sunday &nbsp&nbsp 10am - 2pm<br/><br/>" + openClosed;
   document.querySelector('.hours').style.backgroundColor = barColour;
 }
 setClickMessages(thisWeek, openClosed, barColour);
