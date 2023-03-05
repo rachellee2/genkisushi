@@ -9,8 +9,6 @@ const holiday = new Map([
   // -------------------------------------------------------------------------------------ADD HOLIDAY----
 
   // 2023
-  ["AUCKLAND ANNIVERSARY 30/01","30/01/2023"],
-  ["WAITANGI DAY 06/02",        "06/02/2023"],
   ["GOOD FRIDAY 07/04",         "07/04/2023"],
   ["EASTER MONDAY 10/04",       "10/04/2023"],
   ["ANZAC DAY 25/04",           "25/04/2023"],
@@ -39,7 +37,7 @@ const holiday = new Map([
 // });
 
 let isWeekday, isSaturday = false;
-let openClosed, barColour = '';
+let openClosed, barColour = "";
 // ____________TRUE WHENEVER TEMP CLOSING THE SHOP_________________________________________________________
 let tempClosing = false;
 
@@ -64,20 +62,13 @@ function setClickMessages(){
     switch (date.getDay()) {
       case 0:
         if((date.getDate() + "" + (date.getMonth()+1))=="53"){
-          cMessage = "Sun &nbsp&nbsp [ Round the Bays 2023 ] &nbsp&nbsp 10am - 2pm"; 
-        }
+          cMessage = "Sun &nbsp&nbsp [ Round the Bays 2023 ] &nbsp&nbsp 10am - 2pm"; }
         else{
           cMessage = "Sun &nbsp&nbsp closed"; 
         }
         break;
       case 1:
-        if((date.getDate() + "" + (date.getMonth()+1))=="132"){
-          cMessage = "Mon &nbsp&nbsp closed";
-        }
-        else{
-          cMessage = "Mon &nbsp&nbsp 8am - 5pm";
-        }  
-        break;
+        cMessage = "Mon &nbsp&nbsp 8am - 5pm"; break;
       case 2:
         cMessage = "Tue &nbsp&nbsp 8am - 5pm"; break;
       case 3:
@@ -85,45 +76,28 @@ function setClickMessages(){
       case 4:
         cMessage = "Thu &nbsp&nbsp 8am - 5pm"; break;
       case 5:
-        if((date.getDate() + "" + (date.getMonth()+1))=="61"){
-          cMessage = "Fri &nbsp&nbsp 9am - 4pm";
-        }
-        else{
-          cMessage = "Fri &nbsp&nbsp 8am - 5pm";
-        }  
-        break;
+        cMessage = "Fri &nbsp&nbsp 8am - 5pm"; break;
       case 6:
-        if((date.getDate() + "" + (date.getMonth()+1))=="281"){
-          cMessage = "Sat &nbsp&nbsp 9am - 2pm";
-        }
-        else{
-          cMessage = "Sat &nbsp&nbsp 9am - 3pm";
-        }  }
-
-    
-    thisWeek.set(date, cMessage);  }
+        cMessage = "Sat &nbsp&nbsp 9am - 3pm"; break; }
+        
+    thisWeek.set(date, cMessage); 
+    if(index == 0){ openClosed = cMessage + "<br/><br/>";}
+  }
 
   // day is neither saturday nor sunday AND time is at or later than 8 AND earlier than 5.
   isWeekday = ((gettingDays != 6 && gettingDays != 0) && gettingHours >= 8 && gettingHours < 17);
   isSaturday = (gettingDays == 6 && gettingHours >= 9 && gettingHours < 15);
 
-  if(((d.getDate() + "" + (d.getMonth()+1))=="53") && gettingHours >= 10 && gettingHours < 14){
-    // if(gettingHours >= 10 && gettingHours < 14){
-    //   isWeekday = true;
-    //   isSaturday = true;
-    // }
-    // else{
-    //   isWeekday = false;
-    //   isSaturday = false;
-    // }
-    isWeekday = true;
-    isSaturday = true;
-  }
+  // if today is Sunday march 5th, the banner will be green with "OPEN", between 10am to 2pm
+  // if(((d.getDate() + "" + (d.getMonth()+1))=="53") && gettingHours >= 10 && gettingHours < 14){
+  //   isWeekday = true;
+  //   isSaturday = true;
+  // }
 
   // day is saturday AND time is at or later than 9 AND earlier than 3.
   // isSaturday = (gettingDays == 6 && gettingHours >= 9 && gettingHours < 15);
   // non holiday message
-  openClosed = (isWeekday || isSaturday)? '- we are currently OPEN -' : '- we are currently CLOSED -';
+  openClosed += (isWeekday || isSaturday)? '- we are currently OPEN -' : '- we are currently CLOSED -';
   // non holiday colour
   barColour = (isWeekday || isSaturday)? '#4c6439' : '#643a39';
 
@@ -194,10 +168,11 @@ function setClickMessages(){
     //  + " " + Math.random();
     counter += 1; });
   
-  if(tempClosing == true && !openClosed.includes('Unfortunately')){
-    openClosed = 'Unfortunately, we will be closed this [...]<br />due to staff shortage.<br /><br />' + openClosed;
-  }
-  document.getElementById("closeOrOpened").innerHTML = "Round the Bays 2023<br/><br/>We will be open<br/>this Sunday (5/3/2023)<br/>for NZ's largest fun run, Round The Bays!<br/>#RTB23 #RoundtheBays<br/><br/>* 10% off on sushi<br/>for the participants & staffs<br/>of Round the Bays<br/>on Sunday!<br/><br/>- Opening hour -<br/>Sunday &nbsp&nbsp 10am - 2pm<br/><br/>" + openClosed;
+  // if(tempClosing == true && !openClosed.includes('Unfortunately')){
+  //   openClosed = 'Unfortunately, we will be closed this [...]<br />due to staff shortage.<br /><br />' + openClosed;
+  // }
+  
+  document.getElementById("closeOrOpened").innerHTML = openClosed;
   document.querySelector('.hours').style.backgroundColor = barColour;
 }
 setClickMessages(thisWeek, openClosed, barColour);
