@@ -10,6 +10,7 @@ const holiday = new Map([
 
   // 2023
   ["GOOD FRIDAY 07/04",         "07/04/2023"],
+  ["EASTER Holiday 08/04",      "08/04/2023"],
   ["EASTER MONDAY 10/04",       "10/04/2023"],
   ["ANZAC DAY 25/04",           "25/04/2023"],
   ["KING'S BIRTHDAY 05/06",     "05/06/2023"],
@@ -137,10 +138,7 @@ function setClickMessages(){
           openClosed = "<i class=\"fa-solid fa-champagne-glasses\"></i> HAPPY NEW YEARS " + value.slice(6,10) 
           + " <i class=\"fa-solid fa-champagne-glasses\"></i><br />Best wishes for the holidays, and for health and happiness throughout the coming year!<br /><br />" 
           + "- we are currently CLOSED -"; break;
-
-        case "GOOD FRIDAY 07/04":
-          openClosed = "IT'S GOOD FRIDAY!<br /><br />" + "- we are currently CLOSED -"; break;
-
+        
         case "Staff-shortage":
           openClosed = "Unfortunately, we are closed today due to staff shortage.<br />We will reopen on monday 31st October.<br /><br />" + "- we are currently CLOSED -"; break;
 
