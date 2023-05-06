@@ -16,7 +16,7 @@ const holiday = new Map([
   ["KING'S BIRTHDAY 05/06",     "05/06/2023"],
   ["MATARIKI 14/07",            "14/07/2023"],
   ["LABOUR DAY 23/10",          "23/10/2023"],
-  // ["CHRISTMAS EVE 24/12",       "24/12/2023"],
+  ["CHRISTMAS EVE 24/12",       "24/12/2023"],
   ["CHRISTMAS 25/12",           "25/12/2023"],
   ["BOXING DAY 26/12",          "26/12/2023"],
   // ----------------------------------------------------------------------------------------------------
@@ -52,6 +52,7 @@ function setClickMessages(){
   let d = new Date();
   let currentDate = addZero(d.getDate()) + "/" + addZero((d.getMonth()+1)) + "/" + d.getFullYear();
   let gettingHours = d.getHours();
+  let gettingMins = d.getMinutes();
   let gettingDays = d.getDay();
 
   thisWeek.clear();
@@ -69,15 +70,15 @@ function setClickMessages(){
         }
         break;
       case 1:
-        cMessage = "Mon &nbsp&nbsp 8am - 5pm"; break;
+        cMessage = "Mon &nbsp&nbsp 8am - 4:30pm"; break;
       case 2:
-        cMessage = "Tue &nbsp&nbsp 8am - 5pm"; break;
+        cMessage = "Tue &nbsp&nbsp 8am - 4:30pm"; break;
       case 3:
-        cMessage = "Wed &nbsp&nbsp 8am - 5pm"; break;
+        cMessage = "Wed &nbsp&nbsp 8am - 4:30pm"; break;
       case 4:
-        cMessage = "Thu &nbsp&nbsp 8am - 5pm"; break;
+        cMessage = "Thu &nbsp&nbsp 8am - 4:30pm"; break;
       case 5:
-        cMessage = "Fri &nbsp&nbsp 8am - 5pm"; break;
+        cMessage = "Fri &nbsp&nbsp 8am - 4:30pm"; break;
       case 6:
         cMessage = "Sat &nbsp&nbsp 9am - 3pm"; break; }
         
@@ -86,7 +87,8 @@ function setClickMessages(){
   }
 
   // day is neither saturday nor sunday AND time is at or later than 8 AND earlier than 5.
-  isWeekday = ((gettingDays != 6 && gettingDays != 0) && gettingHours >= 8 && gettingHours < 17);
+  isWeekday = ((gettingDays != 6 && gettingDays != 0) && gettingHours >= 8 && gettingHours < 17 && (gettingHours == 16 && gettingMins < 30));
+
   isSaturday = (gettingDays == 6 && gettingHours >= 9 && gettingHours < 15);
 
   // if today is Sunday march 5th, the banner will be green with "OPEN", between 10am to 2pm
