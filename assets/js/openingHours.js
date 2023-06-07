@@ -76,6 +76,7 @@ function setClickMessages(){
       case 3:
         cMessage = "Wed &nbsp&nbsp 8am - 4:30pm"; break;
       case 4:
+        // alert(gettingHours.toString()+gettingMins.toString());
         cMessage = "Thu &nbsp&nbsp 8am - 4:30pm"; break;
       case 5:
         cMessage = "Fri &nbsp&nbsp 8am - 4:30pm"; break;
@@ -87,8 +88,8 @@ function setClickMessages(){
   }
 
   // day is neither saturday nor sunday AND time is at or later than 8 AND earlier than 5.
-  isWeekday = ((gettingDays != 6 && gettingDays != 0) && gettingHours >= 8 && gettingHours < 17 && (gettingHours == 16 && gettingMins < 30));
-
+  isWeekday = ((gettingDays != 6 && gettingDays != 0) && gettingHours >= 8 && gettingHours.toString() + gettingMins.toString() < 1630 );
+// && (gettingHours == 16 && gettingMins > 30)
   isSaturday = (gettingDays == 6 && gettingHours >= 9 && gettingHours < 15);
 
   // if today is Sunday march 5th, the banner will be green with "OPEN", between 10am to 2pm
