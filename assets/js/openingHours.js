@@ -9,6 +9,8 @@ const holiday = new Map([
   // -------------------------------------------------------------------------------------ADD HOLIDAY----
 
   // 2023
+  ["Renovaion 24/06",         "24/06/2023"],
+
   ["GOOD FRIDAY 07/04",         "07/04/2023"],
   ["EASTER Holiday 08/04",      "08/04/2023"],
   ["EASTER MONDAY 10/04",       "10/04/2023"],
@@ -129,10 +131,14 @@ function setClickMessages(){
 
       // edit prompt holiday message
       switch (key) {
+        case "Renovaion 24/06":
+          openClosed = "Sorry, we are closed today due to renovation.<br />See you on Monday! :)<br /><br />" 
+          + "- we are currently CLOSED -"; break;
+
         case "CHRISTMAS 25/12":
           openClosed = "<i class=\"fa-solid fa-socks\"></i> MERRY CHRISTMAS <i class=\"fa-solid fa-gift\"></i><br /> Wishing everyone a truly wonderful Christmas filled with peace and love!<br /><br />" 
           + "- we are currently CLOSED -"; break;
-
+  
         case "CHRISTMAS EVE 24/12":
           openClosed = "<i class=\"fa-solid fa-snowman\"></i> MERRY CHRISTMAS EVE <i class=\"fa-solid fa-candy-cane\"></i><br /><br />" 
           + "- we are currently CLOSED -"; break;
