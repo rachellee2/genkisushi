@@ -90,7 +90,12 @@ function setClickMessages(){
   }
 
   // day is neither saturday nor sunday AND time is at or later than 8 AND earlier than 5.
-  isWeekday = ((gettingDays != 6 && gettingDays != 0) && gettingHours >= 8 && gettingHours.toString() + gettingMins.toString() < 1630 );
+  // day is neither saturday nor sunday AND time is at or later than 8 AND earlier than 4:30.
+  isWeekday = (gettingDays >= 1 && gettingDays <= 5) && 
+             (gettingHours > 8 || (gettingHours == 8 && gettingMins >= 0)) && 
+             (gettingHours < 16 || (gettingHours == 16 && gettingMins <= 30));
+
+  // isWeekday = ((gettingDays != 6 && gettingDays != 0) && gettingHours >= 8 && gettingHours.toString() + gettingMins.toString() > 1630 );
 // && (gettingHours == 16 && gettingMins > 30)
   isSaturday = (gettingDays == 6 && gettingHours >= 9 && gettingHours < 15);
 
@@ -131,8 +136,8 @@ function setClickMessages(){
 
       // edit prompt holiday message
       switch (key) {
-        case "Renovaion 24/06":
-          openClosed = "Sorry, we are closed today due to renovation.<br />See you on Monday! :)<br /><br />" 
+        case "Ld":
+          openClosed = "Sorry, we are closed today<br />for Long Weekend Holiday.<br />Thank you for your understanding<br />and continued support.<br />See you on Monday! :)<br /><br />" 
           + "- we are currently CLOSED -"; break;
 
         case "CHRISTMAS 25/12":
