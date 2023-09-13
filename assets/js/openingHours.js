@@ -91,9 +91,11 @@ function setClickMessages(){
 
   // day is neither saturday nor sunday AND time is at or later than 8 AND earlier than 5.
   // day is neither saturday nor sunday AND time is at or later than 8 AND earlier than 4:30.
-  isWeekday = (gettingDays >= 1 && gettingDays <= 5) && 
-             (gettingHours > 8 || (gettingHours == 8 && gettingMins >= 0)) && 
-             (gettingHours < 16 || (gettingHours == 16 && gettingMins <= 30));
+  // isWeekday = (gettingDays >= 1 && gettingDays <= 5) && 
+  //            (gettingHours > 8 || (gettingHours == 8 && gettingMins >= 0)) && 
+  //            (gettingHours < 16 || (gettingHours == 16 && gettingMins <= 30));
+
+  isWeekday = (gettingDays >= 1 && gettingDays <= 5) && (gettingHours >= 8 && gettingHours < 17);
 
   // isWeekday = ((gettingDays != 6 && gettingDays != 0) && gettingHours >= 8 && gettingHours.toString() + gettingMins.toString() > 1630 );
 // && (gettingHours == 16 && gettingMins > 30)
