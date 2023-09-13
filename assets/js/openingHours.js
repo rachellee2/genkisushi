@@ -72,16 +72,16 @@ function setClickMessages(){
         }
         break;
       case 1:
-        cMessage = "Mon &nbsp&nbsp 8am - 4:30pm"; break;
+        cMessage = "Mon &nbsp&nbsp 8am - 5pm"; break;
       case 2:
-        cMessage = "Tue &nbsp&nbsp 8am - 4:30pm"; break;
+        cMessage = "Tue &nbsp&nbsp 8am - 5pm"; break;
       case 3:
-        cMessage = "Wed &nbsp&nbsp 8am - 4:30pm"; break;
+        cMessage = "Wed &nbsp&nbsp 8am - 5pm"; break;
       case 4:
         // alert(gettingHours.toString()+gettingMins.toString());
-        cMessage = "Thu &nbsp&nbsp 8am - 4:30pm"; break;
+        cMessage = "Thu &nbsp&nbsp 8am - 5pm"; break;
       case 5:
-        cMessage = "Fri &nbsp&nbsp 8am - 4:30pm"; break;
+        cMessage = "Fri &nbsp&nbsp 8am - 5pm"; break;
       case 6:
         cMessage = "Sat &nbsp&nbsp 9am - 3pm"; break; }
         
