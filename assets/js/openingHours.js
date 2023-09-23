@@ -9,7 +9,8 @@ const holiday = new Map([
   // -------------------------------------------------------------------------------------ADD HOLIDAY----
 
   // 2023
-  ["Renovaion 24/06",         "24/06/2023"],
+  ["Renovaion 24/06",          "24/06/2023"],
+  ["Staff shortage 25/09",       "25/09/2023"],
 
   ["GOOD FRIDAY 07/04",         "07/04/2023"],
   ["EASTER Holiday 08/04",      "08/04/2023"],
@@ -155,8 +156,11 @@ function setClickMessages(){
           + " <i class=\"fa-solid fa-champagne-glasses\"></i><br />Best wishes for the holidays, and for health and happiness throughout the coming year!<br /><br />" 
           + "- we are currently CLOSED -"; break;
         
-        case "Staff-shortage":
-          openClosed = "Unfortunately, we are closed today due to staff shortage.<br />We will reopen on monday 31st October.<br /><br />" + "- we are currently CLOSED -"; break;
+        // case "Staff-shortage":
+        //   openClosed = "Unfortunately, we are closed today due to staff shortage.<br />We will reopen on monday 31st October.<br /><br />" + "- we are currently CLOSED -"; break;
+
+        case "Staff shortage 25/09":
+          openClosed = "Sorry, we are closed today due to staff shortage<br /><br />Thank you for your understanding<br />and your continuous support :)<br /><br />We will reopen tomorrow (Tues 26/09)<br /><br />" + "- we are currently CLOSED -"; break;
 
         default:
           openClosed = "HAPPY " + key.slice(0, key.length-6) + "!<br /><br />" + "- we are currently CLOSED -"; break;
