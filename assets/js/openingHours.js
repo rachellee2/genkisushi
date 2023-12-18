@@ -19,9 +19,21 @@ const holiday = new Map([
   ["KING'S BIRTHDAY 05/06",     "05/06/2023"],
   ["MATARIKI 14/07",            "14/07/2023"],
   ["LABOUR DAY 23/10",          "23/10/2023"],
+  ["CHRISTMAS Holiday 23/12",   "23/12/2023"],
   ["CHRISTMAS EVE 24/12",       "24/12/2023"],
   ["CHRISTMAS 25/12",           "25/12/2023"],
   ["BOXING DAY 26/12",          "26/12/2023"],
+  ["CHRISTMAS Holiday 27/12",   "27/12/2023"],
+  ["CHRISTMAS Holiday 28/12",   "28/12/2023"],
+  ["CHRISTMAS Holiday 29/12",   "29/12/2023"],
+  ["CHRISTMAS Holiday 30/12",   "30/12/2023"],
+  ["New Year's Eve 31/12",      "31/12/2023"],
+  ["New Year's Day 01/01",      "01/01/2024"],
+  ["New Year's Holiday 02/01",  "02/01/2024"],
+  ["New Year's Holiday 03/01",  "03/01/2024"],
+  ["New Year's Holiday 04/01",  "04/01/2024"],
+  ["New Year's Holiday 05/01",  "05/01/2024"],
+  ["New Year's Holiday 06/01",  "06/01/2024"]
   // ----------------------------------------------------------------------------------------------------
 ]);
 
