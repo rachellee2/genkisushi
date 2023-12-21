@@ -94,7 +94,7 @@ function setClickMessages(){
         // alert(gettingHours.toString()+gettingMins.toString());
         cMessage = "Thu &nbsp&nbsp 8am - 5pm"; break;
       case 5:
-        cMessage = "Fri &nbsp&nbsp 8am - 5pm"; break;
+        cMessage = "Fri &nbsp&nbsp 8am - 3pm"; break;
       case 6:
         cMessage = "Sat &nbsp&nbsp 9am - 3pm"; break; }
         
@@ -108,7 +108,7 @@ function setClickMessages(){
   //            (gettingHours > 8 || (gettingHours == 8 && gettingMins >= 0)) && 
   //            (gettingHours < 16 || (gettingHours == 16 && gettingMins <= 30));
 
-  isWeekday = (gettingDays >= 1 && gettingDays <= 5) && (gettingHours >= 8 && gettingHours < 17);
+  isWeekday = (gettingDays >= 1 && gettingDays <= 5) && (gettingHours >= 8 && gettingHours < 15);
 
   // isWeekday = ((gettingDays != 6 && gettingDays != 0) && gettingHours >= 8 && gettingHours.toString() + gettingMins.toString() > 1630 );
 // && (gettingHours == 16 && gettingMins > 30)
