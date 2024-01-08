@@ -12,29 +12,18 @@ const holiday = new Map([
   ["Renovaion 24/06",          "24/06/2023"],
   ["Staff shortage 25/09",       "25/09/2023"],
 
-  ["GOOD FRIDAY 07/04",         "07/04/2023"],
-  ["EASTER Holiday 08/04",      "08/04/2023"],
-  ["EASTER MONDAY 10/04",       "10/04/2023"],
-  ["ANZAC DAY 25/04",           "25/04/2023"],
-  ["KING'S BIRTHDAY 05/06",     "05/06/2023"],
-  ["MATARIKI 14/07",            "14/07/2023"],
-  ["LABOUR DAY 23/10",          "23/10/2023"],
-  ["CHRISTMAS Holiday 23/12",   "23/12/2023"],
-  ["CHRISTMAS EVE 24/12",       "24/12/2023"],
-  ["CHRISTMAS 25/12",           "25/12/2023"],
-  ["BOXING DAY 26/12",          "26/12/2023"],
-  ["CHRISTMAS Holiday 27/12",   "27/12/2023"],
-  ["CHRISTMAS Holiday 28/12",   "28/12/2023"],
-  ["CHRISTMAS Holiday 29/12",   "29/12/2023"],
-  ["CHRISTMAS Holiday 30/12",   "30/12/2023"],
-  ["New Year's Eve 31/12",      "31/12/2023"],
-  ["New Year's Day 01/01",      "01/01/2024"],
-  ["New Year's Holiday 02/01",  "02/01/2024"],
-  ["New Year's Holiday 03/01",  "03/01/2024"],
-  ["New Year's Holiday 04/01",  "04/01/2024"],
-  ["New Year's Holiday 05/01",  "05/01/2024"],
-  ["New Year's Holiday 06/01",  "06/01/2024"]
-  // ----------------------------------------------------------------------------------------------------
+  ["New Year's Eve 31/12",        "31/12/2023"],
+  ["New Year's Day 01/01",        "01/01/2024"],
+  ["New Year's Holiday 02/01",    "02/01/2024"],
+  ["New Year's Holiday 03/01",    "03/01/2024"],
+  ["New Year's Holiday 04/01",    "04/01/2024"],
+  ["New Year's Holiday 05/01",    "05/01/2024"],
+  ["New Year's Holiday 06/01",    "06/01/2024"],
+  ["Auckland Anniversary 29/01",  "29/01/2024"],
+  ["Waitangi Day 06/02",          "06/02/2024"],
+  ["Good Friday 29/03",           "29/03/2024"],
+  ["Easter Monday 01/03",         "01/03/2024"],
+  //----------------------------------------------------------------------------------------------------
 ]);
 
 // const testHoliday = new Map([
@@ -94,7 +83,7 @@ function setClickMessages(){
         // alert(gettingHours.toString()+gettingMins.toString());
         cMessage = "Thu &nbsp&nbsp 8am - 5pm"; break;
       case 5:
-        cMessage = "Fri &nbsp&nbsp 8am - 3pm"; break;
+        cMessage = "Fri &nbsp&nbsp 8am - 5pm"; break;
       case 6:
         cMessage = "Sat &nbsp&nbsp 9am - 3pm"; break; }
         
@@ -108,7 +97,7 @@ function setClickMessages(){
   //            (gettingHours > 8 || (gettingHours == 8 && gettingMins >= 0)) && 
   //            (gettingHours < 16 || (gettingHours == 16 && gettingMins <= 30));
 
-  isWeekday = (gettingDays >= 1 && gettingDays <= 5) && (gettingHours >= 8 && gettingHours < 15);
+  isWeekday = (gettingDays >= 1 && gettingDays <= 5) && (gettingHours >= 8 && gettingHours < 17);
 
   // isWeekday = ((gettingDays != 6 && gettingDays != 0) && gettingHours >= 8 && gettingHours.toString() + gettingMins.toString() > 1630 );
 // && (gettingHours == 16 && gettingMins > 30)
