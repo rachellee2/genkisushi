@@ -12,17 +12,11 @@ const holiday = new Map([
   ["Renovaion 24/06",          "24/06/2023"],
   ["Staff shortage 25/09",       "25/09/2023"],
 
-  ["New Year's Eve 31/12",        "31/12/2023"],
-  ["New Year's Day 01/01",        "01/01/2024"],
-  ["New Year's Holiday 02/01",    "02/01/2024"],
-  ["New Year's Holiday 03/01",    "03/01/2024"],
-  ["New Year's Holiday 04/01",    "04/01/2024"],
-  ["New Year's Holiday 05/01",    "05/01/2024"],
-  ["New Year's Holiday 06/01",    "06/01/2024"],
-  ["Auckland Anniversary 29/01",  "29/01/2024"],
-  ["Waitangi Day 06/02",          "06/02/2024"],
-  ["Good Friday 29/03",           "29/03/2024"],
-  ["Easter Monday 01/03",         "01/03/2024"],
+  ["Anzac Day 25/04",             "25/04/2024"],
+  ["King's Birthday 03/06",       "03/06/2024"],
+  ["Mataraki 28/06",              "28/06/2024"],
+  ["Labour Day 28/10",            "28/10/2024"],
+  ["Christmas Holiday 24/12",     "24/12/2024"]
   //----------------------------------------------------------------------------------------------------
 ]);
 
@@ -74,16 +68,16 @@ function setClickMessages(){
         }
         break;
       case 1:
-        cMessage = "Mon &nbsp&nbsp 8am - 5pm"; break;
+        cMessage = "Mon &nbsp&nbsp 8am - 4:30pm"; break;
       case 2:
-        cMessage = "Tue &nbsp&nbsp 8am - 5pm"; break;
+        cMessage = "Tue &nbsp&nbsp 8am - 4:30pm"; break;
       case 3:
-        cMessage = "Wed &nbsp&nbsp 8am - 5pm"; break;
+        cMessage = "Wed &nbsp&nbsp 8am - 4:30pm"; break;
       case 4:
         // alert(gettingHours.toString()+gettingMins.toString());
-        cMessage = "Thu &nbsp&nbsp 8am - 5pm"; break;
+        cMessage = "Thu &nbsp&nbsp 8am - 4:30pm"; break;
       case 5:
-        cMessage = "Fri &nbsp&nbsp 8am - 5pm"; break;
+        cMessage = "Fri &nbsp&nbsp 8am - 4:30pm"; break;
       case 6:
         cMessage = "Sat &nbsp&nbsp 9am - 3pm"; break; }
         
@@ -96,8 +90,7 @@ function setClickMessages(){
   // isWeekday = (gettingDays >= 1 && gettingDays <= 5) && 
   //            (gettingHours > 8 || (gettingHours == 8 && gettingMins >= 0)) && 
   //            (gettingHours < 16 || (gettingHours == 16 && gettingMins <= 30));
-
-  isWeekday = (gettingDays >= 1 && gettingDays <= 5) && (gettingHours >= 8 && gettingHours < 17);
+  isWeekday = (gettingDays >= 1 && gettingDays <= 5) && (gettingHours >= 8 && (gettingHours < 16 || (gettingHours == 16 && gettingMins < 30)));
 
   // isWeekday = ((gettingDays != 6 && gettingDays != 0) && gettingHours >= 8 && gettingHours.toString() + gettingMins.toString() > 1630 );
 // && (gettingHours == 16 && gettingMins > 30)
